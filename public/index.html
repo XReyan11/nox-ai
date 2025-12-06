@@ -6,11 +6,38 @@
     <title>Nox AI</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <h1>Welcome to Nox AI 🤖</h1>
-    <input id="input" placeholder="Ask anything...">
-    <button onclick="send()">Send</button>
 
-    <script src="script.js"></script>
+<body>
+
+<header class="header">
+    <button id="menuBtn" class="icon">☰</button>
+    <h1>Nox AI</h1>
+    <button id="moreBtn" class="icon">⋮</button>
+</header>
+
+<div id="sideMenu" class="side-menu">
+    <a href="#">Profile</a>
+    <a href="#">Settings</a>
+</div>
+
+<h2 class="welcome">Welcome to Nox AI 🤖</h2>
+
+<p class="subtitle">Ask Anything!</p>
+
+<div class="chat-box">
+    <button class="plus-btn">+</button>
+    <input id="userInput" type="text" placeholder="Type here...">
+    <button id="sendBtn" class="send-btn">Send</button>
+</div>
+
+<div class="btn-row">
+    <button class="tool-btn">Create Image</button>
+    <button class="tool-btn">Image → Video</button>
+    <button class="tool-btn">Text → Video</button>
+</div>
+
+<div id="chatOutput" class="chat-output"></div>
+
+<script src="script.js"></script>
 </body>
-</html>
+    </html>
