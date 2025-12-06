@@ -1,43 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nox AI</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
-<header class="header">
-    <button id="menuBtn" class="icon">☰</button>
-    <h1>Nox AI</h1>
-    <button id="moreBtn" class="icon">⋮</button>
-</header>
+    <!-- HEADER -->
+    <header class="top-bar">
+        <button id="menuBtn" class="menu-btn">☰</button>
+        <h1 class="title">Nox AI 🤖</h1>
+    </header>
 
-<div id="sideMenu" class="side-menu">
-    <a href="#">Profile</a>
-    <a href="#">Settings</a>
-</div>
+    <!-- SIDE MENU -->
+    <nav id="sideMenu" class="side-menu hidden">
+        <a href="#">Profile</a>
+        <a href="#">Settings</a>
+    </nav>
 
-<h2 class="welcome">Welcome to Nox AI 🤖</h2>
+    <!-- MAIN CONTENT -->
+    <main class="content">
+        <h2>Welcome to Nox AI 🤖</h2>
+        <p>Ask Anything!</p>
 
-<p class="subtitle">Ask Anything!</p>
+        <!-- Chat Display -->
+        <div id="chatBox" class="chat-box"></div>
 
-<div class="chat-box">
-    <button class="plus-btn">+</button>
-    <input id="userInput" type="text" placeholder="Type here...">
-    <button id="sendBtn" class="send-btn">Send</button>
-</div>
+        <!-- Feature Buttons -->
+        <div class="feature-buttons">
+            <button>Create Image</button>
+            <button>Image → Video</button>
+            <button>Text → Video</button>
+        </div>
+    </main>
 
-<div class="btn-row">
-    <button class="tool-btn">Create Image</button>
-    <button class="tool-btn">Image → Video</button>
-    <button class="tool-btn">Text → Video</button>
-</div>
+    <!-- CHAT INPUT (BOTTOM FIXED BAR LIKE CHATGPT) -->
+    <div class="bottom-bar">
+        <button id="plusBtn" class="circle-btn">+</button>
+        <input id="msgInput" type="text" placeholder="Message Nox AI..." />
+        <button id="sendBtn" class="send-btn">Send</button>
+    </div>
 
-<div id="chatOutput" class="chat-output"></div>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
-    </html>
+</html>
