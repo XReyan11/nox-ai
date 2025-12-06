@@ -1,21 +1,33 @@
-const express = require("express");
-const path = require("path");
-const cors = require("cors");
-const bodyParser = require("body-parser");
+import express from "express";
+import cors from "cors";
+import dotenv from "dotenv";
+import OpenAI from "openai";
+
+dotenv.config();
 
 const app = express();
 app.use(cors());
-app.use(bodyParser.json());
+app.use(express.json());
+app.use(express.static("public"));
 
-// Serve static public folder
-app.use(express.static(path.join(__dirname, "public")));
-
-// Chat API (Dummy reply, later AI connect)
-app.post("/api/chat", (req, res) => {
-    const userMsg = req.body.message || "";
-    res.json({ reply: "You said: " + userMsg });
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY
 });
 
-// Railway PORT
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log("Server running on port " + PORT));
+app.post("/api/chat", async (req, res) => {
+  try {
+    const userMessage = req.body.message;
+
+    const response = await openai.chat.completions.create({
+      model: "gpt-4o-mini",
+      messages: [{ role: "user", content: userMessage }]
+    });
+
+    res.json({ reply: response.choices[0].message.content });
+  } 
+  catch (err) {
+    res.json({ reply: "Server Error 😭" });
+  }
+});
+
+app.listen(3000, () => console.log("Server running on port 3000"));
