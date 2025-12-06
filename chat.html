@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Nox AI — Chat</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <button id="menuBtn" class="icon-btn" aria-label="Open menu">☰</button>
+    <div class="brand">Nox AI</div>
+    <button id="moreBtn" class="icon-btn" aria-label="More">⋮</button>
+  </header>
+
+  <!-- Side menu -->
+  <aside id="sideMenu" class="side">
+    <nav>
+      <button id="closeSide" class="close-x" aria-label="Close">✕</button>
+      <ul>
+        <li><button id="openProfile" class="link-btn">Profile</button></li>
+        <li><button id="openSettings" class="link-btn">Settings</button></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Modal overlay -->
+  <div id="overlay" class="overlay" hidden></div>
+
+  <!-- small more-menu -->
+  <div id="moreMenu" class="more-menu" hidden>
+    <button id="gotoProfile" class="menu-btn">Profile</button>
+    <button id="gotoSettings" class="menu-btn">Settings</button>
+    <hr />
+    <button id="logoutBtn" class="menu-btn">Logout</button>
+  </div>
+
+  <!-- Main -->
+  <main class="main">
+    <section id="welcome" class="welcome">
+      <h1>Welcome to Nox AI 🤖</h1>
+      <p>Ask anything!</p>
+    </section>
+
+    <section id="chatBox" class="chatBox" aria-live="polite" aria-atomic="false"></section>
+  </main>
+
+  <!-- bottom input bar -->
+  <footer class="inputBar">
+    <button id="plusBtn" class="circle" aria-label="More">+</button>
+    <input id="messageInput" class="messageInput" type="text" placeholder="Type here..." autocomplete="off" />
+    <button id="sendBtn" class="sendBtn">Send</button>
+
+    <!-- plus popup -->
+    <div id="plusMenu" class="plusMenu" hidden>
+      <button id="createImageBtn" class="smallBtn">Create Image</button>
+      <button id="imageToVideoBtn" class="smallBtn">Image → Video</button>
+      <button id="textToVideoBtn" class="smallBtn">Text → Video</button>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+      </html>
