@@ -1,30 +1,21 @@
-import express from "express";
-import cors from "cors";
-import path from "path";
-import { fileURLToPath } from "url";
+const express = require("express");
+const path = require("path");
+const cors = require("cors");
+const bodyParser = require("body-parser");
 
 const app = express();
 app.use(cors());
-app.use(express.json());
+app.use(bodyParser.json());
 
-// Fix for ES Modules __dirname
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-// Serve Frontend
+// Serve static public folder
 app.use(express.static(path.join(__dirname, "public")));
 
-// Basic API route
+// Chat API (Dummy reply, later AI connect)
 app.post("/api/chat", (req, res) => {
     const userMsg = req.body.message || "";
     res.json({ reply: "You said: " + userMsg });
 });
 
-// Default: load index.html
-app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "public", "index.html"));
-});
-
-app.listen(3000, () => {
-    console.log("Server running on http://localhost:3000");
-});
+// Railway PORT
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log("Server running on port " + PORT));
