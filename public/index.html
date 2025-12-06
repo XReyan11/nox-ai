@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nox AI</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <!-- HEADER -->
+    <!-- TOP BAR -->
     <header class="top-bar">
-        <button id="menuBtn" class="menu-btn">☰</button>
+        <button id="menuBtn" class="icon">☰</button>
         <h1 class="title">Nox AI 🤖</h1>
+        <button id="moreBtn" class="icon">⋮</button>
     </header>
 
     <!-- SIDE MENU -->
@@ -20,39 +20,26 @@
         <a href="#">Profile</a>
         <a href="#">Settings</a>
     </nav>
-<!-- POPUP MENU (Plus Button Options) -->
-<div id="plusMenu" class="plus-menu hidden">
-    <button class="menu-item">Create Image</button>
-    <button class="menu-item">Image → Video</button>
-    <button class="menu-item">Text → Video</button>
-</div>
 
-<!-- CHAT INPUT (BOTTOM FIXED BAR LIKE CHATGPT) -->
-<div class="bottom-bar">
-    <button id="plusBtn" class="circle-btn">+</button>
-    <input id="msgInput" type="text" placeholder="Message Nox AI..." />
-    <button id="sendBtn" class="send-btn">Send</button>
-</div>
     <!-- MAIN CONTENT -->
     <main class="content">
         <h2>Welcome to Nox AI 🤖</h2>
         <p>Ask Anything!</p>
 
-        <!-- Chat Display -->
         <div id="chatBox" class="chat-box"></div>
-
-        <!-- Feature Buttons -->
-        <div class="feature-buttons">
-            <button>Create Image</button>
-            <button>Image → Video</button>
-            <button>Text → Video</button>
-        </div>
     </main>
 
-    <!-- CHAT INPUT (BOTTOM FIXED BAR LIKE CHATGPT) -->
+    <!-- PLUS MENU -->
+    <div id="plusMenu" class="plus-menu hidden">
+        <button class="menu-item">Create Image</button>
+        <button class="menu-item">Image → Video</button>
+        <button class="menu-item">Text → Video</button>
+    </div>
+
+    <!-- BOTTOM CHAT BAR -->
     <div class="bottom-bar">
         <button id="plusBtn" class="circle-btn">+</button>
-        <input id="msgInput" type="text" placeholder="Message Nox AI..." />
+        <input id="msgInput" type="text" placeholder="Message Nox AI…">
         <button id="sendBtn" class="send-btn">Send</button>
     </div>
 
