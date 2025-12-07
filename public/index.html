@@ -6,7 +6,11 @@
     <title>Nox AI 🤖</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
+<script>
+    if (!sessionStorage.getItem("loggedin")) {
+        window.location.href = "login.html";
+    }
+</script>
 <body>
 
 <!-- TOP BAR -->
