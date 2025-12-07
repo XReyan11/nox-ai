@@ -3,94 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nox AI – Login</title>
+    <title>Nox AI Login</title>
     <link rel="stylesheet" href="style.css">
+
     <style>
         body {
-            background: #f5f5f5;
-            font-family: Arial, sans-serif;
-        }
-
-        .login-container {
-            width: 90%;
-            max-width: 380px;
-            margin: 80px auto;
-            background: #ffffff;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-
-        .login-container h2 {
-            margin-bottom: 20px;
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        .login-container input {
-            width: 100%;
-            padding: 14px;
-            margin: 12px 0;
-            border-radius: 10px;
-            border: 1px solid #ccc;
-            font-size: 16px;
-        }
-
-        .login-btn {
-            width: 100%;
-            padding: 14px;
-            background: black;
+            background: #111;
             color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial;
+        }
+
+        .login-box {
+            background: #1c1c1c;
+            padding: 30px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 350px;
+            text-align: center;
+            box-shadow: 0px 0px 15px rgba(255,255,255,0.1);
+        }
+
+        .login-box h2 {
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
             border: none;
-            border-radius: 10px;
-            margin-top: 15px;
-            font-size: 18px;
+            border-radius: 8px;
+            outline: none;
         }
 
-        .login-btn:hover {
-            opacity: 0.9;
-        }
-
-        .small-text {
-            margin-top: 15px;
-            font-size: 14px;
-        }
-
-        a {
-            color: black;
-            font-weight: bold;
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #00b7ff;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 16px;
+            margin-top: 10px;
         }
     </style>
 </head>
+
 <body>
 
-    <div class="login-container">
-        <h2>🔐 Nox AI Login</h2>
+    <div class="login-box">
+        <h2>Login to Nox AI 🤖</h2>
 
-        <input type="text" id="username" placeholder="Username">
-        <input type="password" id="password" placeholder="Password">
+        <input id="username" type="text" placeholder="Enter Username">
+        <input id="password" type="password" placeholder="Enter Password">
 
-        <button class="login-btn" onclick="login()">Login</button>
+        <button onclick="login()">Login</button>
 
-        <p class="small-text">
-            Don't have an account? <a href="#">Register</a>
-        </p>
+        <p id="msg" style="margin-top:10px; color:red;"></p>
     </div>
 
-    <script>
-        function login() {
-            const user = document.getElementById("username").value;
-            const pass = document.getElementById("password").value;
+<script>
+    function login() {
+        const user = document.getElementById("username").value;
+        const pass = document.getElementById("password").value;
 
-            if (user === "admin" && pass === "1234") {
-                alert("Login Successful!");
-                window.location.href = "index.html";
-            } else {
-                alert("Wrong username or password!");
-            }
+        if (user === "admin" && pass === "1234") {
+            window.location.href = "index.html"; 
+        } else {
+            document.getElementById("msg").innerText = "Wrong username or password ❌";
         }
-    </script>
+    }
+</script>
 
 </body>
 </html>
