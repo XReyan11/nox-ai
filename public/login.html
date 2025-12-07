@@ -1,85 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nox AI Login</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nox AI Login</title>
 
-    <style>
-        body {
-            <video autoplay muted loop id="bgVideo">
-    <source src="https://cdn.pixabay.com/video/2023/03/15/156521-806663487_large.mp4" type="video/mp4">
-</video>
-            background: #111;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            font-family: Arial;
-        }
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
 
-        .login-box {
-            background: #1c1c1c;
-            padding: 30px;
-            border-radius: 12px;
-            width: 90%;
-            max-width: 350px;
-            text-align: center;
-            box-shadow: 0px 0px 15px rgba(255,255,255,0.1);
-        }
+    /* Background video full screen */
+    .bg-video {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+        filter: brightness(40%);
+    }
 
-        .login-box h2 {
-            margin-bottom: 20px;
-        }
+    /* Centered login box */
+    .login-box {
+        width: 90%;
+        max-width: 400px;
+        margin: 120px auto;
+        background: rgba(0, 0, 0, 0.8);
+        padding: 30px;
+        border-radius: 15px;
+        color: white;
+        text-align: center;
+    }
 
-        input {
-            width: 100%;
-            padding: 12px;
-            margin: 10px 0;
-            border: none;
-            border-radius: 8px;
-            outline: none;
-        }
+    .login-box h2 {
+        margin-bottom: 20px;
+        font-size: 26px;
+    }
 
-        button {
-            width: 100%;
-            padding: 12px;
-            background: #00b7ff;
-            border: none;
-            border-radius: 8px;
-            color: white;
-            font-size: 16px;
-            margin-top: 10px;
-        }
-    </style>
+    input {
+        width: 100%;
+        padding: 14px;
+        border: none;
+        border-radius: 10px;
+        margin-top: 12px;
+        font-size: 16px;
+        outline: none;
+    }
+
+    button {
+        width: 100%;
+        padding: 14px;
+        background: #00aaff;
+        border: none;
+        border-radius: 10px;
+        color: white;
+        margin-top: 18px;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: #0088dd;
+    }
+</style>
 </head>
 
 <body>
 
-    <div class="login-box">
-        <h2>Login to Nox AI 🤖</h2>
+<!-- Background AI video -->
+<video autoplay muted loop class="bg-video">
+    <source src="https://files.catbox.moe/ufp3bu.mp4" type="video/mp4">
+</video>
 
-        <input id="username" type="text" placeholder="Enter Username">
-        <input id="password" type="password" placeholder="Enter Password">
+<div class="login-box">
+    <h2>Login to Nox AI 🤖</h2>
 
-        <button onclick="login()">Login</button>
+    <input type="text" id="username" placeholder="Enter Username">
+    <input type="password" id="password" placeholder="Enter Password">
 
-        <p id="msg" style="margin-top:10px; color:red;"></p>
-    </div>
+    <button onclick="login()">Login</button>
+</div>
 
 <script>
-    function login() {
-        const user = document.getElementById("username").value;
-        const pass = document.getElementById("password").value;
+function login() {
+    const user = document.getElementById("username").value.trim();
+    const pass = document.getElementById("password").value.trim();
 
-        if (user === "admin" && pass === "1234") {
-            window.location.href = "index.html"; 
-        } else {
-            document.getElementById("msg").innerText = "Wrong username or password ❌";
-        }
+    if (user === "" || pass === "") {
+        alert("Please enter username and password!");
+        return;
     }
+
+    // Redirect after login
+    window.location.href = "/index.html";
+}
 </script>
 
 </body>
