@@ -1,52 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nox AI</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nox AI 🤖</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- 🔥 TOP BAR -->
-    <header class="top-bar">
-        <button id="menuBtn" class="menu-icon">☰</button>
-        <h1 class="title">Nox AI 🤖</h1>
-        <button id="moreBtn" class="menu-icon">⋮</button>
-    </header>
+<!-- TOP BAR -->
+<header class="top-bar">
+    <button id="menuBtn" class="icon">☰</button>
+    <h1 class="title">Nox AI 🤖</h1>
+    <button id="moreBtn" class="icon">⋮</button>
+</header>
 
-    <div id="plusMenu" class="plus-menu hidden">
+<!-- SIDE MENU -->
+<nav id="sideMenu" class="side-menu hidden">
+    <a href="#">Profile</a>
+    <a href="#">Settings</a>
+</nav>
+
+<!-- MAIN CONTENT -->
+<main class="content">
+    <h2>Welcome to Nox AI 🤖</h2>
+    <p>Ask Anything!</p>
+
+    <!-- CHAT DISPLAY -->
+    <div id="chatBox" class="chat-box"></div>
+</main>
+
+<!-- PLUS MENU (Hidden by Default) -->
+<div id="plusMenu" class="plus-menu hidden">
     <button class="menu-item">Create Image</button>
     <button class="menu-item">Image → Video</button>
     <button class="menu-item">Text → Video</button>
 </div>
 
-    <!-- 🔥 MAIN CONTENT -->
-    <main class="content">
-        <h2>Welcome to Nox AI 🤖</h2>
-        <p>Ask Anything!</p>
+<!-- BOTTOM CHAT BAR -->
+<div class="bottom-bar">
+    <button id="plusBtn" class="circle-btn">+</button>
+    <input id="userInput" placeholder="Message Nox AI..." />
+    <button id="sendBtn" class="send-btn">Send</button>
+</div>
 
-        <!-- CHAT DISPLAY -->
-        <div id="chatBox" class="chat-box"></div>
-    </main>
-
-    <!-- 🔥 .plus-menu {
-    display: none;  
-}
-    <div id="plusMenu" class="plus-menu hidden">
-        <button class="menu-item">Create Image</button>
-        <button class="menu-item">Image → Video</button>
-        <button class="menu-item">Text → Video</button>
-    </div>
-
-    <!-- 🔥 BOTTOM CHAT BAR -->
-    <div class="bottom-bar">
-        <button id="plusBtn" class="circle-btn">+</button>
-        <input id="userInput" type="text" placeholder="Message Nox AI..." />
-        <button id="sendBtn" class="send-btn">Send</button>
-    </div>
-
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
-            </html>
+</html>
